@@ -1,4 +1,6 @@
 #coding:utf-8
+
+# Importation des bibliothèques
 from verification import *
 import numpy as np 
 import random
@@ -6,9 +8,11 @@ import random
 
 class CreateSudoku :
     def __init__(self):
+        # Déclaration d'un tableau utilisable facilement 
         self.data = np.array([[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0]])
+        # Déclaration d'une variable pour initier la boucle
         x = 0
-        # Tant que je n'ai pas 20
+        # Tant que je n'ai pas 20 - c'est aussi le vecteur de la difficulté
         while(x < 20):
             # Prend une position random en X
             posX = random.randrange(0,8)
