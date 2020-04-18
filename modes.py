@@ -1,3 +1,4 @@
+#coding:utf-8
 from ajout_de_valeur import *
 import victory_condition
 import time
