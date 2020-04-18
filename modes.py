@@ -1,15 +1,15 @@
-#coding:utf-8
 from ajout_de_valeur import *
 import victory_condition
 import time
 
 
 def classic(tableau):
-    debut=time.time()
+    print(tableau)
+    debut = float(time.time())
     while True:
         ajout_valeur(tableau)
         if victory_condition.victory(tableau):
-            fin=time.time()
+            fin = float(time.time())
             print("victoire!")
-            print("Temps pour réussir: " + fin-debut)
+            print("Temps pour réussir: " + str(fin-debut))
             break

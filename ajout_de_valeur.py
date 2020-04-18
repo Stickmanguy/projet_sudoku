@@ -1,12 +1,14 @@
-#coding:utf-8
-import verification
-
+from verification import *
 
 def ajout_valeur(tableau):
-    nb = input("rentrer la valeur de la case:")
-    x, y = input("entrer les coordonées en x et y de la case:")
-    if verification.verif_case(x, y, nb, tableau) & verification.verif_colonne(tableau, x, nb) & verification.verif_ligne(tableau, y, nb):
-        tableau[x, y] = nb
-        print(tableau)
+    nb = int(input("rentrer la valeur de la case:"))
+    x = int(input("entrer les coordonées en x :"))
+    y = int(input("entrer les coordonées en Y :"))
+
+    if verif_case(tableau, x, y, nb):
+        if verif_colonne(tableau, x, nb) and verif_ligne(tableau, y, nb) and 0 < nb <= 9 and tableau[y, x] == 0:
+            tableau[y, x] = nb
+            print(tableau)
     else:
-        print("la valeur ne peut être rentrée ici")
+        print("Pas bon")
+

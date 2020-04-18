@@ -1,7 +1,6 @@
-#coding:utf-8
 from create_sudoku import CreateSudoku
-from modes import *
+from ajout_de_valeur import *
+import modes
 
 sudoku_01 = CreateSudoku()
-print(sudoku_01.data)
-classic(sudoku_01.data)
+modes.classic(sudoku_01.data)
