@@ -3,6 +3,10 @@
         {
             "name": "Pierre",
             "password": "b1629f41d13199db589fbb518fbf64255f38e3c7a3c8cd7c303c255c568b580352b976221fcb75bb96a0c05e8a817246fdf09c65b4f52adaf245dc9a5167ece9515f2939774e8cdb73dc4ef11c557d78708268e4aab8f17fd05b34e97521628a"
+        },
+        {
+            "name": "Popol",
+            "password": "a257d2ea966d9c509a23ec5fb1b62132bd8f675ceb92d130751f1fe6fba309698ed40e0a3518a743ef854e1b0daf89e6d5f590a95e62328738a71fab8bee25c11c9b21fe6179017fc8d542adb42ab22949645a30c6325067ee9ad663dcea0dd3"
         }
     ]
 }
