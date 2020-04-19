@@ -3,22 +3,6 @@
         {
             "name": "Pierre",
             "password": "b1629f41d13199db589fbb518fbf64255f38e3c7a3c8cd7c303c255c568b580352b976221fcb75bb96a0c05e8a817246fdf09c65b4f52adaf245dc9a5167ece9515f2939774e8cdb73dc4ef11c557d78708268e4aab8f17fd05b34e97521628a"
-        },
-        {
-            "name": "Arthur",
-            "password": "275fe45bbfcdf46db3ab9a0a33b9396cdbc905f1606c4af790e4fb5e01d1055ec569ff48b3e69d61049460e3c33b59274842b29990e6a7763eab64c154924c9c9ee8393271ebab9c0b1734bc1a5ba0ee498725ac9e2f7c963a4be41f78bac552"
-        },
-        {
-            "name": "tata",
-            "password": "ecf19c89ccc4f31314a3d3bc47d0b2ba8c44a8308e79b9ae1febb9058657591a52756bd9e8e01c5cd0e244658dfbb1078395a9b1bddcf4c848fc48559d42ba2738f8130c8c8a9ec12ebc214af5aea6e5a52b92e34d111b3cb1f1e867af215a8b"
-        },
-        {
-            "name": "moise",
-            "password": "78a387228e87ca20c32fec2815da4e9e1ecf024740b130a30a685c026f1e5d27e8350b15bdf6e464949533ab5632bd3863dc38cc221cb29f072987a79c83684ae3dbba59258056df60387cef5b214874306e0bafa18fe6f772d3ac67ced59981"
-        },
-        {
-            "name": "moise",
-            "password": "baeacfc4178e820d7d0eba5c56920e0f9f5a79ed98ff55e16e0fbd4c5c2ebbe2fb36bb5c2777a3290d352e0d9f187b5f9d51749b207595c7110ab1fc4efb0713a1846821bf4ced7c37b73ddd8e5eb4dce8400da2ebad395c7e57d80fd542d9a5"
         }
     ]
 }
