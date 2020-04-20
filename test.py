@@ -4,7 +4,7 @@ import string
 
 
 random_mdp = random.choice(string.ascii_letters) + random.choice(string.ascii_letters) + str(random.randint(1, 500)) + random.choice(string.ascii_letters) + random.choice(string.ascii_letters)
-rec_email = "fleondespam@gmail.com"
+rec_email = "celienvanhuyghem@gmail.com"
 sender_email = "sudoku.mania.mod@gmail.com"
 password = "Az@rty123456"
 message = "Voici votre nouveau mot de passe" + str(random_mdp) + " (changez le vite)"

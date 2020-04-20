@@ -15,6 +15,24 @@
             "password": "127ea2fd25f3ecb75bc13acd2d32e94541cb955ec95dcfe2f73c21ff3f285b19971398d113911c0434a4111bd696f933f274d9dff43912ff537cc1b07e057ec4b710dbe656ce39f73c9b8ee486772db4bf4c1a1a539da673445cd2e21321cde9",
             "mail": "fleondespam@gmail.com",
             "classement": 500
+        },
+        {
+            "name": "LeBG",
+            "password": "c2a2c3e9d5ccc3a8ad1491cc144650c86c08d1ba0403a5ce2e75add84ec2b26368ee7fc109e0bd3f84a668ebb293dc55facd465b7903228bdd87d3ea0040e2fb2416f3a04d36103c37f54e751d24df0744aae4e2d8b190895fa1812266943859",
+            "mail": "celienvnahuyghem@gmail.com",
+            "classement": 500
+        },
+        {
+            "name": "LeBGsetrompe",
+            "password": "d74dceceb223b42c249d3b4527475b94a01601356d84f0b405569d1c932a2f6b4ca180659bba54923328b148946cd1c0d682ec3ec15aae17975135cb31c71a908c247430b53d538b9b66c9950e887cec5879282e673b595b167236863af7506c",
+            "mail": "celienvanhuyghem@gmail.com",
+            "classement": 500
+        },
+        {
+            "name": "cocolasticot",
+            "password": "045c3042bca9ec40896aa2257e2140c2981fb61daf34e8db82b5fc692ecadf3efc304fb4ede22ab0b673c300abd016997d3739e79ca21ca4f421918ade222d0bdc41ac9dde11b3be5b1391f25eb87945514bb1fba0e774654a3ab3a9854b5774",
+            "mail": "celien.vanhuyghem@std.heh.be",
+            "classement": 500
         }
     ]
 }

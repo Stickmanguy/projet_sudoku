@@ -32,8 +32,6 @@ def mort_subite(tableau):
                 tableau[posY, posX] = 0
                 x += 1
 
-
-
         if victory_condition.victory(tableau):
             fin = time.time()
             print("victoire!")

@@ -15,7 +15,8 @@ def ajout_valeur(tableau):
         if verif_case(tableau, x, y, nb) & verif_colonne(tableau, x, nb) and verif_ligne(tableau, y, nb) and 0 < nb <= 9 and tableau[y, x] == 0:
                 tableau[y, x] = nb
                 print(tableau)
-                return True + tableau
+                return True  #, tableau
         else:
+            print("Pas bon")
             print(tableau)
-            return False + tableau
+            return False  #, tableau

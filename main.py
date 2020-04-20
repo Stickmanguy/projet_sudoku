@@ -7,4 +7,5 @@ from Interface_enregistrement import *
 from change_mdp import *
 import modes
 
-print(verify_password("127ea2fd25f3ecb75bc13acd2d32e94541cb955ec95dcfe2f73c21ff3f285b19971398d113911c0434a4111bd696f933f274d9dff43912ff537cc1b07e057ec4b710dbe656ce39f73c9b8ee486772db4bf4c1a1a539da673445cd2e21321cde9", "gc34zk"))
+sudoku_01 = CreateSudoku()
+modes.mort_subite(sudoku_01.data)
