@@ -5,20 +5,16 @@
             "password": "b1629f41d13199db589fbb518fbf64255f38e3c7a3c8cd7c303c255c568b580352b976221fcb75bb96a0c05e8a817246fdf09c65b4f52adaf245dc9a5167ece9515f2939774e8cdb73dc4ef11c557d78708268e4aab8f17fd05b34e97521628a"
         },
         {
-            "name": "toto",
-            "password": "e8691a40d0947c3458599e732890ab6c9026828d62fa2b9186ff1037a79384269d454df0deb7bbb5aadd529c870412c36e9c4996de9a955d1d260c34367bd77606a1af4251f638e3d63a883731411e88111cfafb95e09cec171a21861653634e"
+            "name": "bobo",
+            "password": "2bcc4a779d85d31cc53034c5d583cc05e599badacf30d60346ddc28c22f0b4427541cefece3f6352c82f95ff882f69f4b7476392ab39b1746b487df2081a7e26679542049fa3e716c264f8696a8c0532b0d997fbc33a3fa572312df02d77bbb8",
+            "mail": "fleondespam@gmail.com",
+            "classement": 500
         },
         {
-            "name": "titi",
-            "password": "65edd26c3b69b4a074645f7a52b8df43b7e8819c8bdd84304a919169778f75e0e0c3208cadc6873a3795a9f7ec74eaf563972baf399b7fe7b4dd3868294d8446d4db6ee04b9da669528fe0a565fb34d1414124ea242610bd879ed859b97a4b33"
-        },
-        {
-            "name": "jojo",
-            "password": "c52835468457c7525f9ef94cf9f574624df01faaaca0acf974274e5325ea738a35c849c25bfe4e38954ec379a54a77965d71b65c096a52b9870b6f081739ea0797f12f768c25ae6aebc339a32036e2afb1e0d8c30274c983fa2002704206ce21"
-        },
-        {
-            "name": "pik",
-            "password": "caf143de5761cf44e01b7b23036a8979a7d7f3fb7f1aa163dbdffbf32baba0981637e9361c0c17b0f7ec145836490df2ced4ada45608f3520f1a58bdf68f34cbbe1d1045da62ef5f07a79daeedb6b00a8a31906fb63ddb3810f4647b8d15e480"
+            "name": "fleonde",
+            "password": "127ea2fd25f3ecb75bc13acd2d32e94541cb955ec95dcfe2f73c21ff3f285b19971398d113911c0434a4111bd696f933f274d9dff43912ff537cc1b07e057ec4b710dbe656ce39f73c9b8ee486772db4bf4c1a1a539da673445cd2e21321cde9",
+            "mail": "fleondespam@gmail.com",
+            "classement": 500
         }
     ]
 }
