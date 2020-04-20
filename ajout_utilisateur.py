@@ -2,9 +2,8 @@ from hashage import *
 import json
 import getpass
 
-def ajout_utilisateur():
-    user = input("Votre Nom d'utilisateur :")
-    passwd = getpass.getpass("Votre mot de passe :")
+
+def ajout_utilisateur(user, passwd):
     passwd = hash_password(passwd)
 
     # Lecture du fichier .json
