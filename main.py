@@ -15,11 +15,11 @@ from Interface_welcome import *
 # from Interface_enregistrement_test import *
 from change_mdp import *
 import modes
+# root = Tk()
+# Login(root)
+# root.mainloop()
 
-root = Tk()
-Login(root)
-
+Game()
 
 #Welcome()
-
-root.mainloop()
+#

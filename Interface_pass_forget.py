@@ -6,7 +6,6 @@ from tkinter import Tk
 class Password_forget:
 
     def __init__(self, master):
-
         self.window = master
 
         self.window.title("Sudoku mania")
