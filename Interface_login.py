@@ -55,7 +55,7 @@ class Login:
         self.lbl_pass_forget = Label(self.window, text="Mot de passe oublié", font=("Helvetica", 10, UNDERLINE),
                                      relief=FLAT, bg="#902220", fg="#00a8ff")
         self.lbl_pass_forget.place(x=300, y=338)
-        self.lbl_pass_forget.bind("<Button-1>", command=)
+        self.lbl_pass_forget.bind("<Button-1>")
 
         self.btn_login = Button(self.window, text="Se connecter", width=30, height=1, font=("Helvetica", 16,
                                 tkFont.BOLD), bg="#dfe6e9", activebackground="#b2bec3", relief=FLAT, command=self.play)
@@ -78,6 +78,7 @@ class Login:
         password = str(entry_password.get())
         if verif_utilisateur(identifiant, password):
             print("Tu passes !")
+            Welcome()
         else:
             print("Tu passes pas ")
 

@@ -21,6 +21,5 @@ Login(root)
 
 
 #Welcome()
-#Game()
 
 root.mainloop()
