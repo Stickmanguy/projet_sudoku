@@ -22,7 +22,7 @@ def mort_subite(tableau):
     while True:  # boucle pour la résolution du sudoku
         if not ajout_valeur(tableau):  # malus en cas d'érreur
             x = 0
-            while (x < 2):
+            while x < 2:
                 # Prends une position random en X
                 posX = random.randrange(0, 8)
                 # Prends une position random en Y

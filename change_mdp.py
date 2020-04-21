@@ -10,7 +10,6 @@ def mdp_oubli(user, mail):
         for p in user_list['people']:
             if p['name'] == user and p['mail'] == mail:
                 passwd = send_mail_oubli(user, mail)  # Assignation du mdp + envoie du mail
-                tmp = p['password']
                 p['password'] = hash_password(passwd)
 
         json_file.seek(0)  # rewind
@@ -22,10 +21,10 @@ def mdp_oubli(user, mail):
 def change_mdp(old_pass,new_pass, user):
     with open('user.json', 'r+', encoding='utf-8') as json_file:
         user_list = json.load(json_file)
-        old_pass = hash_password(old_pass)
         for p in user_list['people']:
-            if p['name'] == user and p['password'] == old_pass:
-                tmp = p['password']
+            if p['name'] == user and verify_password(p['password'], old_pass):
+                print(old_pass)
+                print(new_pass)
                 p['password'] = hash_password(new_pass)
 
         json_file.seek(0)  # rewind

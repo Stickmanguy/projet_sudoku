@@ -29,9 +29,21 @@
             "classement": 500
         },
         {
-            "name": "cocolasticot",
-            "password": "045c3042bca9ec40896aa2257e2140c2981fb61daf34e8db82b5fc692ecadf3efc304fb4ede22ab0b673c300abd016997d3739e79ca21ca4f421918ade222d0bdc41ac9dde11b3be5b1391f25eb87945514bb1fba0e774654a3ab3a9854b5774",
-            "mail": "celien.vanhuyghem@std.heh.be",
+            "name": "Bobo",
+            "password": "0edb5c28afbf44cf4da20431bbad2ecff7dcfcc8c5aef1b8ece4beb206e3bb019666d44935277844d0d0d7458159cf9702dd869f23b8e8f337979ed92606046f9475dbbbcd7ec27381a6d9e49ef4453f55f24e2d76d4ccd4de289fca8ca5c00d",
+            "mail": "fleondespam@gmail.com",
+            "classement": 500
+        },
+        {
+            "name": "thuthur713",
+            "password": "2897ed69e803343a51389de8477012d0506ecd11c4661c6b6c0e7d2df7685c5e70c8a9b0d523ceb149491a19805116d4ad69aba261804cac6a23e74f90b6ef4153ea0f79a190980f16c5d41a0b71eba0b5f97a1b0835fbb563180bdbda121917",
+            "mail": "fleondespam@gmail.com",
+            "classement": 500
+        },
+        {
+            "name": "nono",
+            "password": "42ddaaf2a246469fb7486d485fbfd4a21b24f825a28bf8dba625d0c97d644514acede315cc7f85a288e805aaa745ddbb7b5b4f4158586a1c52a98f1fb20444bf2373e1a0da297868c3dacce5ec6048a8394186f12f0c02f408a3c145870ee22e",
+            "mail": "celienvanhuyghem@gmail.com",
             "classement": 500
         }
     ]

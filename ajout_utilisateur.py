@@ -4,10 +4,7 @@ import json
 import getpass
 
 
-def ajout_utilisateur():
-    user = input("Username :")
-    mail = input('Mail :')
-    passwd = getpass.getpass("Votre mot de passe :")
+def ajout_utilisateur(user, mail, passwd):
     passwd = hash_password(passwd)
 
     # Lecture du fichier .json
