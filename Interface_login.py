@@ -1,20 +1,17 @@
 from tkinter import *
 import tkinter.font as tkFont
 from Interface_register import Register
-from verif_utilisateur import *
 from Interface_game import Game
 from Interface_function import *
 from Interface_welcome import Welcome
 from Interface_pass_forget import Password_forget
-
+from verif_utilisateur import *
 
 class Login:
 
     def __init__(self, master):
-
         global entry_identifiant
         global entry_password
-
         self.window = master
 
         self.window.title("Connection")
@@ -52,10 +49,10 @@ class Login:
         entry_password = self.txt_pass = Entry(self.window, width=22, font=("Helvetica", 13), show="*")
         self.txt_pass.place(x=263, y=313)
 
-        self.lbl_pass_forget = Label(self.window, text="Mot de passe oublié", font=("Helvetica", 10, UNDERLINE),
-                                     relief=FLAT, bg="#902220", fg="#00a8ff")
-        self.lbl_pass_forget.place(x=300, y=338)
-        self.lbl_pass_forget.bind("<Button-1>", self.forg_pass)
+        self.btn_pass_forget = Button(self.window, text="Mot de passe oublié", font=("Helvetica", 10, UNDERLINE),
+                                      relief=FLAT, bg="#902220", fg="#00a8ff", activebackground="#902220",
+                                      activeforeground="#00a8ff", bd=0, command=self.pass_forget)
+        self.btn_pass_forget.place(x=300, y=338)
 
         self.btn_login = Button(self.window, text="Se connecter", width=30, height=1, font=("Helvetica", 16,
                                 tkFont.BOLD), bg="#dfe6e9", activebackground="#b2bec3", relief=FLAT, command=self.play)
@@ -72,15 +69,14 @@ class Login:
         root_register = Toplevel(self.window)
         Register(root_register)
 
-    def forg_pass(self):
-        root_pass = Toplevel(self.window)
-        Password_forget(root_pass)
+    def pass_forget(self):
+        root_pass_forget = Toplevel(self.window)
+        Password_forget(root_pass_forget)
 
     def play(self):
         identifiant = str(entry_identifiant.get())
         password = str(entry_password.get())
         if verif_utilisateur(identifiant, password):
-            print("Tu passes !")
             self.window.destroy()
             Welcome()
         else:

@@ -384,18 +384,11 @@ class Game:
         sudoku_01 = CreateSudoku()
         for ligne in range(0, 9):
             for col in range(0, 9):
-                print(str(ligne) + "," + str(col))
-                self.btn_grid[ligne*9+col].config(text=str(sudoku_01.data[ligne, col]), command = selected())
-                print(sudoku_01.data[ligne, col])
-        def selected:
-            
+                lc = ligne * 9 + col
+                if sudoku_01.data[ligne, col] != 0:
+                    self.btn_grid[lc].config(text=str(sudoku_01.data[ligne, col]), command=self.selected)
 
-        print(sudoku_01.data)
         self.window.mainloop()
-
-
-
-
 
     def update_clock(self):
         now = default_timer() - self.start
@@ -404,3 +397,6 @@ class Game:
         str_time = "%02d:%02d:%02d" % (hours, minutes, seconds)
         self.lbl_time.configure(text=str_time)
         self.window.after(1000, self.update_clock)
+
+    def selected(self):
+        print()

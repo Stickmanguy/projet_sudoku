@@ -2,6 +2,7 @@ from tkinter import *
 import tkinter.font as tkFont
 from tkinter.ttk import Combobox
 from Interface_function import *
+from Interface_game import *
 
 
 class Welcome:
@@ -35,7 +36,7 @@ class Welcome:
         self.image = Label(image=self.logo, bg="#902220")
         self.image.pack()
 
-        self.lbl_acc = Label(text="Bienvenue steven", font=("Helvetica", 18, tkFont.BOLD), bg="#902220", fg="#f5f6fa")
+        self.lbl_acc = Label(text="Bienvenue", font=("Helvetica", 18, tkFont.BOLD), bg="#902220", fg="#f5f6fa")
         self.lbl_acc.pack(pady=15)
 
         self.lbl_mode = Label(text="Modes de jeu", font=("Helvetica", 14, tkFont.BOLD), bg="#902220", fg="#f5f6fa")
@@ -48,7 +49,7 @@ class Welcome:
         self.cbx_modes.current(0)
 
         self.btn_jouer = Button(text="Jouer", width=30, height=1, font=("Helvetica", 16, tkFont.BOLD), bg="#dfe6e9",
-                                activebackground="#b2bec3", relief=FLAT)
+                                activebackground="#b2bec3", relief=FLAT, command=self.play)
         self.btn_jouer.pack(pady=50)
 
         self.window.config(menu=self.main_menu)
@@ -57,3 +58,7 @@ class Welcome:
 
     def exit(self):
         self.window.destroy()
+
+    def play(self):
+        self.window.destroy()
+        Game()

@@ -1,6 +1,6 @@
 from tkinter import *
 import tkinter.font as tkFont
-import Interface_login
+import Interface_login_5555
 from ajout_utilisateur import *
 from tkinter.ttk import Combobox
 
@@ -50,7 +50,7 @@ class Enregistrement:
                         print("utilisateur ajouté")
                         print(password1)
                         self.window.destroy()
-                        Interface_login.Login()
+                        Interface_login_5555.Login()
 
                     else:
                         print("entrez un mdp")

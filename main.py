@@ -19,7 +19,9 @@ import modes
 # Login(root)
 # root.mainloop()
 
-Game()
+# root = Tk()
+# gui = Login(root)
+# root.mainloop()
 
 #Welcome()
 #
