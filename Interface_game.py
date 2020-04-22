@@ -1,12 +1,23 @@
 from timeit import default_timer
 from tkinter import *
 from create_sudoku import *
-
+from modes import *
+from ajout_de_valeur import *
+from victory_condition import *
 
 class Game:
 
     def __init__(self):
+        global nbr
+        global lc
+        global sudoku_01
+        global btn_grid
+        global delet
 
+        self.delet = False
+        self.lc = 0
+        self.sudoku_01 = CreateSudoku()
+        self.nbr = 0
         self.window = Tk()
 
         self.window.title("Sudoku mania")
@@ -426,31 +437,31 @@ class Game:
         self.btn_8_8.place(x=396, y=454)
         self.btn_grid.append(self.btn_8_8)
 
-        self.btn1 = Button(text="1", width=3, font=("Helvetica", 15), relief=FLAT)
+        self.btn1 = Button(text="1", width=3, font=("Helvetica", 15), relief=FLAT, command=lambda: self.chiffre_selected(1))
         self.btn1.place(x=106, y=530)
 
-        self.btn2 = Button(text="2", width=3, font=("Helvetica", 15), relief=FLAT)
+        self.btn2 = Button(text="2", width=3, font=("Helvetica", 15), relief=FLAT, command=lambda: self.chiffre_selected(2))
         self.btn2.place(x=151, y=530)
 
-        self.btn3 = Button(text="3", width=3, font=("Helvetica", 15), relief=FLAT)
+        self.btn3 = Button(text="3", width=3, font=("Helvetica", 15), relief=FLAT, command=lambda: self.chiffre_selected(3))
         self.btn3.place(x=196, y=530)
 
-        self.btn4 = Button(text="4", width=3, font=("Helvetica", 15), relief=FLAT)
+        self.btn4 = Button(text="4", width=3, font=("Helvetica", 15), relief=FLAT, command=lambda: self.chiffre_selected(4))
         self.btn4.place(x=106, y=572)
 
-        self.btn5 = Button(text="5", width=3, font=("Helvetica", 15), relief=FLAT)
+        self.btn5 = Button(text="5", width=3, font=("Helvetica", 15), relief=FLAT, command=lambda: self.chiffre_selected(5))
         self.btn5.place(x=151, y=572)
 
-        self.btn6 = Button(text="6", width=3, font=("Helvetica", 15), relief=FLAT)
+        self.btn6 = Button(text="6", width=3, font=("Helvetica", 15), relief=FLAT, command=lambda: self.chiffre_selected(6))
         self.btn6.place(x=196, y=572)
 
-        self.btn7 = Button(text="7", width=3, font=("Helvetica", 15), relief=FLAT)
+        self.btn7 = Button(text="7", width=3, font=("Helvetica", 15), relief=FLAT, command=lambda: self.chiffre_selected(7))
         self.btn7.place(x=106, y=614)
 
-        self.btn8 = Button(text="8", width=3, font=("Helvetica", 15), relief=FLAT)
+        self.btn8 = Button(text="8", width=3, font=("Helvetica", 15), relief=FLAT, command=lambda: self.chiffre_selected(8))
         self.btn8.place(x=151, y=614)
 
-        self.btn9 = Button(text="9", width=3, font=("Helvetica", 15), relief=FLAT)
+        self.btn9 = Button(text="9", width=3, font=("Helvetica", 15), relief=FLAT, command=lambda: self.chiffre_selected(9))
         self.btn9.place(x=196, y=614)
 
         self.btn_supp = Button(text="Effacer", width=6, font=("Helvetica", 15), relief=FLAT)
@@ -461,19 +472,15 @@ class Game:
 
         self.start = default_timer()
         self.update_clock()
-        sudoku_01 = CreateSudoku()
+
         for ligne in range(0, 9):
             for col in range(0, 9):
                 lc = ligne * 9 + col
-                self.btn_grid[lc].config(text=str(sudoku_01.data[ligne, col]))
+                self.btn_grid[lc].config(text=str(self.sudoku_01.data[ligne, col]))
 
         self.window.mainloop()
-    def update_sudoku(self, tableau):
-        for ligne in range(0, 9):
-            for col in range(0, 9):
-                lc = ligne * 9 + col
-                self.btn_grid[lc].config(text=str(sudoku_01.data[ligne, col]))
-                
+
+
     def update_clock(self):
         now = default_timer() - self.start
         minutes, seconds = divmod(now, 60)
@@ -482,7 +489,58 @@ class Game:
         self.lbl_time.configure(text=str_time)
         self.window.after(1000, self.update_clock)
 
-    def selected(self, lc):
+    def selected(self, np):
+        self.lc = np
+        self.btn_grid[self.lc].config(activebackground="#e7dfdf")
+        self.update_sudoku(self.sudoku_01.data, self.lc)
+
+    def chiffre_selected(self, nb):
+        self.nbr = nb
+        print(self.nbr)
+
+    def update_sudoku(self, tableau, lc):
+        if 0 <= lc <= 8:
+            y = 0
+            x = lc
+        elif(9 <= lc <= 17):
+            y = 1
+            x = lc - 9*y
+        elif (18 <= lc <= 26):
+            y = 2
+            x = lc - 9*y
+        elif (27 <= lc <= 35):
+            y = 3
+            x = lc - 9*y
+        elif (36 <= lc <= 44):
+            y = 4
+            x = lc - 9*y
+        elif (45 <= lc <= 53):
+            y = 5
+            x = lc - 9*y
+        elif (54 <= lc <= 62):
+            y = 6
+            x = lc - 9*y
+        elif (63 <= lc <= 71):
+            y = 7
+            x = lc - 9*y
+        elif (72 <= lc <= 80):
+            y = 8
+            x = lc - 9*y
+
+        print(str(x) + "," + str(y))
+
+        tableau_2 = classic(tableau,x,y, self.nbr)
+        if not victory(tableau_2):
+            if np.array_equal(tableau, tableau_2):
+                for ligne in range(0, 9):
+                    for col in range(0, 9):
+                        lc = ligne * 9 + col
+                        self.btn_grid[lc].config(text=str(tableau_2[ligne, col]))
+            else:
+                for ligne in range(0, 9):
+                    for col in range(0, 9):
+                        lc = ligne * 9 + col
+                        self.btn_grid[lc].config(text=str(tableau_2[ligne, col]))
+        else:
+            print('VICTOIRE')
         print(lc)
-
-

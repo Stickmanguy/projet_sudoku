@@ -19,7 +19,7 @@ class CreateSudoku:
             # Prend une position random en Y
             posY = random.randrange(0, 8)
             # Prend une valeur aléatoire entre 1 et 9
-            valeur = random.randrange(1, 9)
+            valeur = random.randrange(1, 10)
             # Vérifie les cases et colonnes et des lignes et des cases
             if verif_case(self.data, posX, posY, valeur):
                 if verif_colonne(self.data, posX, valeur):

@@ -4,23 +4,15 @@ import victory_condition
 import time
 
 
-def classic(tableau):
-    print(tableau)
-    debut = float(time.time())
-    while True:
-        ajout_valeur(tableau)
-        if victory_condition.victory(tableau):
-            fin = float(time.time())
-            print("victoire!")
-            print("Temps pour réussir: " + str(fin - debut))
-            break
+def classic(tableau, x, y, nb):
+    tableau = ajout_valeur(tableau, x, y, nb)
+    return tableau
 
 
-def mort_subite(tableau):
-    print(tableau)
+def mort_subite(tableau, x, y, nb):
     debut = time.time()  # prend le temps du commencement
     while True:  # boucle pour la résolution du sudoku
-        if not ajout_valeur(tableau):  # malus en cas d'érreur
+        if not ajout_valeur(tableau, x, y, nb):  # malus en cas d'érreur
             x = 0
             while x < 2:
                 # Prends une position random en X
