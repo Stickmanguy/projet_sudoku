@@ -15,9 +15,7 @@ from Interface_welcome import *
 # from Interface_enregistrement_test import *
 from change_mdp import *
 import modes
-# root = Tk()
-# Login(root)
-# root.mainloop()
+Game()
 
 # root = Tk()
 # gui = Login(root)
