@@ -1,5 +1,5 @@
-from verification import *
-import create_sudoku
+from Test.verification import *
+from Test import create_sudoku
 
 sudoku_01 = create_sudoku.CreateSudoku()
 

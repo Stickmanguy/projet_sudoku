@@ -3,13 +3,12 @@ import tkinter.font as tkFont
 from tkinter.ttk import Combobox
 from Interface_function import *
 from Interface_game import *
-from Interface_change_pass import Password_change
-from Interface_ranking import Ranking
 
 
 class Welcome:
 
     def __init__(self):
+
         self.window = Tk()
 
         self.window.title("Sudoku mania")
@@ -21,13 +20,13 @@ class Welcome:
         self.main_menu = Menu(self.window)
 
         self.menu_option = Menu(self.main_menu, tearoff=0)
-        self.menu_option.add_command(label="Changer le mot de passe", command=self.change_password)
-        self.menu_option.add_command(label="Se déconnecter", command=self.logoff)
+        self.menu_option.add_command(label="Changer le mot de passe")
+        self.menu_option.add_command(label="Se déconnecter")
         self.menu_option.add_command(label="Quitter", command=self.exit)
 
         self.main_menu.add_cascade(label="Options", menu=self.menu_option)
 
-        self.main_menu.add_command(label="Classement", command=self.ranking)
+        self.main_menu.add_command(label="Classement", command=ranking)
 
         self.main_menu.add_command(label="Règles du jeu", command=rules)
 
@@ -63,14 +62,3 @@ class Welcome:
     def play(self):
         self.window.destroy()
         Game()
-
-    def change_password(self):
-        root_change_password = Toplevel(self.window)
-        Password_change(root_change_password)
-
-    def logoff(self):
-        pass
-
-    def ranking(self):
-        root_ranking = Toplevel(self.window)
-        Ranking(root_ranking)

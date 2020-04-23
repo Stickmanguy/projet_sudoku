@@ -5,7 +5,7 @@ from modes import *
 from victory_condition import *
 
 
-class Game:
+class Mort:
 
     def __init__(self):
         global nbr
@@ -535,18 +535,27 @@ class Game:
             self.y = 8
             self.x = lc - 9*self.y
 
-        self.tableau_2 = classic(tableau,self.x,self.y, self.nbr)
-        if not victory(self.tableau_2):
-            for ligne in range(0, 9):
-                for col in range(0, 9):
-                    if self.tableau_2[ligne, col] != 0:
-                        lc = ligne * 9 + col
-                        self.btn_grid[lc].config(text=str(self.tableau_2[ligne, col]))
-                    elif self.tableau_2 == self.sudoku_01.data:
-                        lc = ligne * 9 + col
-                        self.btn_grid[lc].config(text="")
+        self.tableau_2, bol = mort_subite(tableau,self.x,self.y, self.nbr)
+        print(bol)
+        if bol:
+            if not victory(self.tableau_2):
+                for ligne in range(0, 9):
+                    for col in range(0, 9):
+                        if self.tableau_2[ligne, col] != 0:
+                            lc = ligne * 9 + col
+                            self.btn_grid[lc].config(text=str(self.tableau_2[ligne, col]))
+                        else:
+                            lc = ligne * 9 + col
+                            self.btn_grid[lc].config(text="")
+            else:
+                print('VICTOIRE')
+        elif lose(self.tableau_2):
+            print("you loose")
         else:
-            print('VICTOIRE')
+            for i in range (0,5):
+                self.btn_grid[random.randrange(0,81)].config(text="")
+
+
 
     def exit(self):
         self.window.destroy()

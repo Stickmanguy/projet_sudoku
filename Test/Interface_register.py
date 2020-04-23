@@ -2,9 +2,6 @@ from tkinter import *
 import tkinter.font as tkFont
 from Interface_function import *
 from ajout_utilisateur import *
-import tkinter.messagebox
-from validate_email import validate_email
-from verif_utilisateur import *
 
 class Register:
 
@@ -27,7 +24,7 @@ class Register:
         self.menu_option = Menu(self.main_menu, tearoff=0)
         self.menu_option.add_command(label="Quitter", command=self.exit)
 
-        self.main_menu.add_cascade(label="Option", menu=self.menu_option)
+        self.main_menu.add_cascade(label="Options", menu=self.menu_option)
 
         self.main_menu.add_command(label="Règles du jeu", command=rules)
 
@@ -71,25 +68,22 @@ class Register:
         self.window.destroy()
 
     def inscription(self):
-        identifiant = str(entry_identifiant.get())
-        mail = str(entry_mail.get())
-        password1 = str(entry_password.get())
-        password2 = str(entry_password_conf.get())
+        identifiant = entry_identifiant.get()
+        mail = entry_mail.get()
+        password1 = entry_password.get()
+        password2 = entry_password_conf.get()
+        if identifiant != "":
+            if password1 == password2:
+                if password1 != "":
+                    ajout_utilisateur(identifiant,mail ,password1)
+                    print("add")
+                    print(password1)
+                    self.window.destroy()
 
-        if identifiant == "" or mail == "" or password1 == "" or password2 == "":
-            tkinter.messagebox.showwarning("Attention", "Veuillez remplir tous les champs")
-
-        else:
-            if validate_email(mail):
-                if password1 == password2:
-                    if verif_mail(identifiant) != None:
-                        tkinter.messagebox.showwarning("Attention", "L'identifiant existe déjà")
-                    else:
-                        ajout_utilisateur(identifiant, mail, password1)
-                        tkinter.messagebox.showinfo("Inscription", "L'utilisateur " + identifiant + " a bien été créer")
-                        self.window.destroy()
                 else:
-                    tkinter.messagebox.showwarning("Attention", "Les mots de passe ne sont pas identiques")
+                    print("entrez un mdp")
             else:
-                tkinter.messagebox.showwarning("Attention", "L'adresse mail que vous avez saisie est incorrect")
-
+                print("Password ne correspondent pas")
+        else:
+            print("Si vous avez entrez un identifiant")
+        print(identifiant)

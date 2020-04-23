@@ -45,6 +45,12 @@
             "password": "42ddaaf2a246469fb7486d485fbfd4a21b24f825a28bf8dba625d0c97d644514acede315cc7f85a288e805aaa745ddbb7b5b4f4158586a1c52a98f1fb20444bf2373e1a0da297868c3dacce5ec6048a8394186f12f0c02f408a3c145870ee22e",
             "mail": "celienvanhuyghem@gmail.com",
             "classement": 500
+        },
+        {
+            "name": "juki",
+            "password": "c16016e310337d91b1094f09952d11cfc94ca422258a8078130fdc8bd2e73c12355d4e6bfd0bdf480bea17ea68404b042351fc1fd1ae2d8e6420b1ba7caad9ae856dff48cc4c83e8a43fedc4f4378b71a23ef89b007f70ae1f233ab17186d275",
+            "mail": "fleondespam@gmail.com",
+            "classement": 500
         }
     ]
 }

@@ -1,4 +1,4 @@
-from verification import *
+from Test.verification import *
 
 
 def ajout_valeur(tableau, x, y, nb):
@@ -10,8 +10,6 @@ def ajout_valeur(tableau, x, y, nb):
         y = int(y)
         if verif_case(tableau, x, y, nb) & verif_colonne(tableau, x, nb) and verif_ligne(tableau, y, nb) and 0 < nb <= 9 and tableau[y, x] == 0 or nb == 0:
                 tableau[y, x] = nb
-
-                return tableau
+                return tableau, True
         else:
-            print(tableau)
-            return tableau
+            return tableau, False
