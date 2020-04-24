@@ -18,7 +18,7 @@ def mdp_oubli(user, mail):
         json_file.close()
 
 
-def change_mdp(old_pass,new_pass, user):
+def change_mdp(old_pass, new_pass, user):
     with open('user.json', 'r+', encoding='utf-8') as json_file:
         user_list = json.load(json_file)
         for p in user_list['people']:

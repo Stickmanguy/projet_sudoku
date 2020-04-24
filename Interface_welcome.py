@@ -5,11 +5,14 @@ from Interface_function import *
 from Interface_game import *
 from Interface_change_pass import Password_change
 from Interface_ranking import Ranking
+from Interface_mort import *
 
 
 class Welcome:
 
-    def __init__(self):
+    def __init__(self, identifiant):
+        global identifiants
+        self.identifiants = identifiant
         self.window = Tk()
 
         self.window.title("Sudoku mania")
@@ -61,8 +64,13 @@ class Welcome:
         self.window.destroy()
 
     def play(self):
-        self.window.destroy()
-        Game()
+        if str(self.cbx_modes.get()) == str(self.cbx_list[0]):
+            self.window.destroy()
+            Game(self.identifiants)
+        else:
+            self.window.destroy()
+            Mort(self.identifiants)
+
 
     def change_password(self):
         root_change_password = Toplevel(self.window)

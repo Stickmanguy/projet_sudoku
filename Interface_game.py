@@ -3,11 +3,15 @@ from tkinter import *
 from Test.create_sudoku import *
 from modes import *
 from victory_condition import *
+import tkinter.messagebox
+import json
+from send_mail import *
+from hashage import *
 
 
 class Game:
 
-    def __init__(self):
+    def __init__(self, identifiant):
         global nbr
         global lc
         global sudoku_01
@@ -17,7 +21,8 @@ class Game:
         global y
         global sudoku_un
         global tableau_2
-
+        global  identifiants
+        self.identifiants = identifiant
         self.delet = False
         self.lc = 0
         sudoku_ori = CreateSudoku()
@@ -28,7 +33,7 @@ class Game:
         self.y = 0
         self.x = 0
 
-        self.window.title("Sudoku mania")
+        self.window.title("Sudoku mania - Classique")
         self.window.geometry("478x690")
         self.window.resizable(width=False, height=False)
         self.window.configure(background="#902220")
@@ -535,7 +540,7 @@ class Game:
             self.y = 8
             self.x = lc - 9*self.y
 
-        self.tableau_2 = classic(tableau,self.x,self.y, self.nbr)
+        self.tableau_2, bol = classic(tableau,self.x,self.y, self.nbr)
         if not victory(self.tableau_2):
             for ligne in range(0, 9):
                 for col in range(0, 9):
@@ -546,7 +551,19 @@ class Game:
                         lc = ligne * 9 + col
                         self.btn_grid[lc].config(text="")
         else:
-            print('VICTOIRE')
+            with open('user.json', 'r+', encoding='utf-8') as json_file:
+                user_list = json.load(json_file)
+                for p in user_list['people']:
+                    if p['name'] == self.identifiants:
+                        p['ranking_classique'] += 5
+
+                json_file.seek(0)  # rewind
+                json.dump(user_list, json_file, indent=4)
+                json_file.truncate()
+                json_file.close()
+                tkinter.messagebox.showinfo("Victoire","Bravo vous avez réussi +5 points sont ajoutés")
+                self.window.destroy()
+
 
     def exit(self):
         self.window.destroy()

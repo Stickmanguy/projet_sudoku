@@ -16,7 +16,7 @@ class Enregistrement:
         self.window.configure(background="#2f3640")
         self.window.iconbitmap("icone.ico")
 
-        self.logo = PhotoImage(file='logo_projet.png')
+        self.logo = PhotoImage(file='../logo_projet.png')
         self.image = Label(image=self.logo, bg="#2f3640")
         self.image.pack()
 

@@ -3,11 +3,12 @@ from tkinter import *
 from Test.create_sudoku import *
 from modes import *
 from victory_condition import *
-
+import json
+import tkinter.messagebox
 
 class Mort:
 
-    def __init__(self):
+    def __init__(self, identifiant):
         global nbr
         global lc
         global sudoku_01
@@ -17,7 +18,8 @@ class Mort:
         global y
         global sudoku_un
         global tableau_2
-
+        global identifiants
+        self.identifiants = identifiant
         self.delet = False
         self.lc = 0
         sudoku_ori = CreateSudoku()
@@ -28,7 +30,7 @@ class Mort:
         self.y = 0
         self.x = 0
 
-        self.window.title("Sudoku mania")
+        self.window.title("Sudoku mania - Mort subite")
         self.window.geometry("478x690")
         self.window.resizable(width=False, height=False)
         self.window.configure(background="#902220")
@@ -536,7 +538,6 @@ class Mort:
             self.x = lc - 9*self.y
 
         self.tableau_2, bol = mort_subite(tableau,self.x,self.y, self.nbr)
-        print(bol)
         if bol:
             if not victory(self.tableau_2):
                 for ligne in range(0, 9):
@@ -544,17 +545,35 @@ class Mort:
                         if self.tableau_2[ligne, col] != 0:
                             lc = ligne * 9 + col
                             self.btn_grid[lc].config(text=str(self.tableau_2[ligne, col]))
-                        else:
+                        elif self.tableau_2 == self.sudoku_01.data:
                             lc = ligne * 9 + col
                             self.btn_grid[lc].config(text="")
             else:
-                print('VICTOIRE')
-        elif lose(self.tableau_2):
-            print("you loose")
-        else:
-            for i in range (0,5):
-                self.btn_grid[random.randrange(0,81)].config(text="")
+                with open('user.json', 'r+', encoding='utf-8') as json_file:
+                    user_list = json.load(json_file)
+                    for p in user_list['people']:
+                        if p['name'] == self.identifiants:
+                            p['ranking_classique'] += 5
 
+                    json_file.seek(0)  # rewind
+                    json.dump(user_list, json_file, indent=4)
+                    json_file.truncate()
+                    json_file.close()
+                    tkinter.messagebox.showinfo("Victoire","Bravo vous avez réussi +5 points sont ajoutés")
+                    self.window.destroy()
+        else:
+            with open('user.json', 'r+', encoding='utf-8') as json_file:
+                user_list = json.load(json_file)
+                for p in user_list['people']:
+                    if p['name'] == self.identifiants:
+                        p['ranking_classique'] -= 1
+
+                json_file.seek(0)  # rewind
+                json.dump(user_list, json_file, indent=4)
+                json_file.truncate()
+                json_file.close()
+                tkinter.messagebox.showinfo("pedu", "T'as perdu -1")
+                self.window.destroy()
 
 
     def exit(self):

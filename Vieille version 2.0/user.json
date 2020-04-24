@@ -1,0 +1,11 @@
+{
+    "people": [
+        {
+            "name": "tutu",
+            "password": "c37536831c29cf4d4009ee79fafc01125a3a52ede1831f069c8189738873f071e5d727223d39748eeb5bd5c9f14accdbfd9fa62857a08d34afbc166de7dc5f1bbce3942ba75e371ffc427ca69f81e71c72c8354c527248ac1fc090b71db252ff",
+            "mail": "tata@gmail.com",
+            "ranking_classique": 60,
+            "raking_subite": 2
+        }
+    ]
+}

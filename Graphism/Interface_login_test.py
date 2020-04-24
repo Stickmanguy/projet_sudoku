@@ -1,7 +1,4 @@
-from tkinter import *
-import tkinter.font as tkFont
-from tkinter.ttk import Combobox
-from Interface_enregistrement_test import *
+from Test.Interface_enregistrement_test import *
 from verif_utilisateur import *
 
 

@@ -87,7 +87,7 @@ class Login:
         else:
             if verif_utilisateur(identifiant, password):
                 self.window.destroy()
-                Welcome()
+                Welcome(identifiant)
             else:
                 tkinter.messagebox.showwarning("Attention", "L'identifiant ou le mot de passe que vous avez saisi est incorrect")
 
